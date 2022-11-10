@@ -26,26 +26,36 @@ console.log(saldo);
 saldo = cuentaDeFulanite.depositoEnCuenta(5);
 console.log(saldo);
 console.log(cuentaDeFulanite);
-
+//FIXME
 const cliente2 = new cuentaCliente();
-cuentaCliente.nombreCliente = "Perenganite";
-cuentaCliente.dniCliente = "340";
-cuentaCliente.rutCliente = "34829";
+cliente2.nombreCliente = "Perenganite";
+cliente2.dniCliente = "340";
+cliente2.rutCliente = "34829";
 const cuentaDePerenganite = new cuentaCorriente();
-cuentaCorriente.numeroDeCuenta = "2";
-cuentaDeFulanite.agencia = "32";
-cuentaDeFulanite.cliente = cliente2;
+cuentaDePerenganite.numeroDeCuenta = 2;
+cuentaDePerenganite.agencia = "32";
+cuentaDePerenganite.cliente = cliente2;
 console.log("Antes de la transferencia", cuentaDePerenganite.verSaldo());
-
+//FIXME
 cuentaDeFulanite.transferirACuenta(143, cuentaDePerenganite);
 console.log("Después de la transferencia", cuentaDePerenganite.verSaldo());
-const cuenta3 = new cuentaCliente();
-cuenta3.nombreCliente = "Jaimico";
-cuenta3.dniCliente = "3849";
-cuenta3.rutCliente = "34970";
+const cliente3 = new cuentaCliente();
+cliente3.nombreCliente = "Jaimico";
+cliente3.dniCliente = "3849";
+cliente3.rutCliente = "34970";
 const cuentaDeJaimico = new cuentaCorriente();
 cuentaDeJaimico.agencia = "908";
-cuentaDeJaimico.cliente = cuenta3;
+cuentaDeJaimico.cliente = cliente3;
 cuentaDeJaimico.depositoEnCuenta(100);
 cuentaDeJaimico.transferirACuenta(10, cuentaDeFulanite);
-console.log("Cuenta de jaimico, saldo", cuentaDeJaimico.verSaldo());
+console.log("Cuenta de Jaimico, saldo", cuentaDeJaimico.verSaldo());
+console.log("-----------------------");
+console.log("fulanite---------", cuentaDeFulanite);
+console.log("perenganite-------", cuentaDePerenganite);
+console.log("jaimico-----------", cuentaDeJaimico);
+console.log("_____________________________-");
+
+console.log(cuentaDePerenganite);
+cuentaDePerenganite.cliente = "Perenganite";
+console.log("1 log-----", cuentaDePerenganite.cliente);
+console.log("2 log-----", cuentaDeFulanite.cliente);

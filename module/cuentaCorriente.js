@@ -1,10 +1,18 @@
+import { cuentaCliente } from "./cuentaCliente";
+
 export class cuentaCorriente {
-	cliente;
+	#cliente;
 	numeroDeCuenta;
 	agencia;
 	#saldoDeCuenta;
+	set cliente(value) {
+		if (value instanceof cuentaCliente) this.#cliente = value;
+	}
+	get cliente() {
+		return this.#cliente;
+	}
 	constructor() {
-		this.cliente = null;
+		this.#cliente = null;
 		this.numeroDeCuenta = " ";
 		this.agencia = " ";
 		this.#saldoDeCuenta = 0;
