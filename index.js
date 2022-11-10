@@ -1,9 +1,6 @@
 import { cuentaCliente } from "./module/cuentaCliente.js";
 import { cuentaCorriente } from "./module/cuentaCorriente.js";
-const cliente1 = new cuentaCliente();
-cliente1.nombreCliente = "Fulanite";
-cliente1.dniCliente = 329847;
-cliente1.rutCliente = 3489;
+const cliente1 = new cuentaCliente("Fulanite", "329847", "3489");
 
 const cuentaDeFulanite = new cuentaCorriente();
 cuentaDeFulanite.numeroDeCuenta = "1";
@@ -26,24 +23,21 @@ console.log(saldo);
 saldo = cuentaDeFulanite.depositoEnCuenta(5);
 console.log(saldo);
 console.log(cuentaDeFulanite);
+
 //FIXME
-const cliente2 = new cuentaCliente();
-cliente2.nombreCliente = "Perenganite";
-cliente2.dniCliente = "340";
-cliente2.rutCliente = "34829";
+const cliente2 = new cuentaCliente("Perenganite", "340", "34829");
 const cuentaDePerenganite = new cuentaCorriente();
 cuentaDePerenganite.numeroDeCuenta = 2;
 cuentaDePerenganite.agencia = "32";
 cuentaDePerenganite.cliente = cliente2;
 console.log("Antes de la transferencia", cuentaDePerenganite.verSaldo());
 //FIXME
+
 cuentaDeFulanite.transferirACuenta(143, cuentaDePerenganite);
 console.log("Después de la transferencia", cuentaDePerenganite.verSaldo());
-const cliente3 = new cuentaCliente();
-cliente3.nombreCliente = "Jaimico";
-cliente3.dniCliente = "3849";
-cliente3.rutCliente = "34970";
+const cliente3 = new cuentaCliente("Jaimico", "3849", "34970");
 const cuentaDeJaimico = new cuentaCorriente();
+
 cuentaDeJaimico.agencia = "908";
 cuentaDeJaimico.cliente = cliente3;
 cuentaDeJaimico.depositoEnCuenta(100);
