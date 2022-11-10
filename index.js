@@ -16,17 +16,11 @@ saldo = cuentaDeFulanite.depositoEnCuenta(5);
 
 const cliente2 = new cuentaCliente("Perenganite", "340", "34829");
 const cuentaDePerenganite = new cuentaCorriente(cliente2, 2, 32);
-console.log("Antes de la transferencia", cuentaDePerenganite.verSaldo());
+console.log("Número de cuentas totales", cuentaCorriente.numTotalDeCuentas);
 
 cuentaDeFulanite.transferirACuenta(143, cuentaDePerenganite);
-console.log("Después de la transferencia", cuentaDePerenganite.verSaldo());
 
 const cliente3 = new cuentaCliente("Jaimico", "3849", "34970");
 const cuentaDeJaimico = new cuentaCorriente(cliente3, 3, 908);
 
-console.log("Cuenta de Jaimico, saldo", cuentaDeJaimico.verSaldo());
-console.log("-----------------------");
-console.log("fulanite---------", cuentaDeFulanite);
-console.log("perenganite-------", cuentaDePerenganite);
-console.log("jaimico-----------", cuentaDeJaimico);
-console.log("_____________________________-");
+console.log("Número de cuentas totales", cuentaCorriente.numTotalDeCuentas);
